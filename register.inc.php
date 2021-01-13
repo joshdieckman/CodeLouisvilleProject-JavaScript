@@ -31,7 +31,7 @@
             exit();
         }
 
-        if(usernameExists($link, $username) !== false){
+        if(usernameExists($link, $username, $email) !== false){
             header("location: ../login.php?error=usernametaken");
             exit();
         }
