@@ -44,7 +44,7 @@
         $sql = "SELECT * FROM users WHERE username = ? OR email is = ?;";
         $stmt = mysqli_stmt_init($link);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ../login.php?error=stmtfailed");
+            header("location: ../register.php?error=stmtfailed");
             exit();
         }
 
@@ -67,7 +67,7 @@
         $sql = "INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?);";
         $stmt = mysqli_stmt_init($link);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ../login.php?error=stmtfailed");
+            header("location: ../register.php?error=stmtfailed");
             exit();
         }
 
