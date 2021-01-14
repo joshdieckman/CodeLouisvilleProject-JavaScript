@@ -13,7 +13,8 @@
 
         loginUser($link, $username, $password);
     }else{
-        header("location: login.php");
+        header("location: ../login.php");
         exit();
     }
+
 ?>

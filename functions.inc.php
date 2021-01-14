@@ -80,4 +80,37 @@
         exit();
     }
 
+    function emptyInputLogin($username, $password){
+        $result;
+        if(empty($username) || empty($email)){
+            $result = true;
+        }else{
+            $result = false;
+        }
+        return $result;
+    }
+
+    function loginUser($link, $username, $password){
+        $usernameExists = usernameExists($link, $username, $username);
+
+        if($usernameExists === false){
+            header("location: ../login.php?error=wronglogin");
+            exit();
+        }
+
+        $passwordHashed = $usernameExists["password"];
+        $checkPassword = password_verify($password, $passwordHashed);
+
+        if($checkedPassword === false){
+            header("location: ../login.php?error=wronglogin");
+            exit();
+        }else if($checkedPassword ===true){
+            session_start();
+            $_SESSION["id"] = $usernameExist["id"];
+            $_SESSION["username"] = $usernameExist["username"];
+            header("location: ../index.php");
+            exit();
+        }
+    }
+
 ?>
