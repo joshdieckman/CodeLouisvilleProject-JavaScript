@@ -12,7 +12,7 @@
 
     function invalidUsername($username){
         $result;
-        if(!preg_match("/^[a-zA-Z0-9]*$/"), $username)){
+        if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){
             $result = true;
         }else{
             $result = false;
