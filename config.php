@@ -7,12 +7,12 @@
 	$errors = array();
 
 	$servername = "db5001102249.hosting-data.io";
-	$username = "dbu19026";
+	$dbusername = "dbu19026";
 	$password = "D!3ckm@n";
 	$db = "dbs945854";
 
 	/* Attempt to connect to MySQL database */
-	$link = mysqli_connect($servername, $username, $password, $db);
+	$link = mysqli_connect($servername, $dbusername, $password, $db);
 
 	// Check connection
 	if($link === false){

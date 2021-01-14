@@ -20,7 +20,7 @@ require_once "config.php";
 <body>
     <div class="wrapper">
         <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <p>Please fill out this form to create an account.</p>
         <form action="register.php" method="post">
 			<?php include('errors.php'); ?>
             <div class="form-group">
@@ -29,7 +29,7 @@ require_once "config.php";
             </div>
 			<div class="form-group">
                 <label>Email</label>
-                <input type="text" name="email" class="form-control"value="<?php echo $email; ?>">
+                <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
             </div>
             <div class="form-group">
                 <label>Password</label>
