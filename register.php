@@ -1,38 +1,50 @@
 <?php
-    include_once 'header.php';
+//register.php
+
+// Include config file
+require_once "config.php";
+
 ?>
 
-    <section class="registration-form">
-        <h2>Sign up to Gripe</h2>
-        <form action="register.inc.php" method="post">
-            <input type="text" name="name" placeholder="Full name...">
-            <input type="text" name="email" placeholder="Email...">
-            <input type="text" name="username" placeholder="Username...">
-            <input type="password" name="password" placeholder="Password...">
-            <input type="password" name="confirmpassword" placeholder="Confirm Password...">
-            <button type="submit" name="submit">Sign Up</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
+        <form action="register.php" method="post">
+			<?php include('errors.php'); ?>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+            </div>
+			<div class="form-group">
+                <label>Email</label>
+                <input type="text" name="email" class="form-control"value="<?php echo $email; ?>">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" name="register" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-default" value="Reset">
+            </div>
+            <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
-        <?php
-            if (isset($_GET["error"])){
-                if ($_GET["error"] == "emptyInputRegister"){
-                    echo "<p>Please fill in all fields!</p>";
-                }else if ($_GET["error"] == "invalidUsername"){
-                    echo "<p>This username is invalid!</p>";
-                }else if ($_GET["error"] == "invalidEmail"){
-                    echo "<p>This email is invalid!</p>";
-                }else if ($_GET["error"] == "passwordMatch"){
-                    echo "<p>The passwords did not match!</p>";
-                }else if ($_GET["error"] == "usernameExists"){
-                    echo "<p>This username already exists. Please choose a new username.</p>";
-                }else if ($_GET["error"] == "stmtfailed"){
-                    echo "<p>Something went wrong! Please try again.</p>";
-                }else if ($_GET["error"] == "none"){
-                    echo "<p>Welcome to Gripe!</p>";
-                }
-            }
-        ?>
-    </section>
-
-<?php
-    include_once 'footer.php';
-?>
+    </div>
+</body>
+</html>
