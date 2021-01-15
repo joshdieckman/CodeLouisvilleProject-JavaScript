@@ -7,6 +7,8 @@
         $url = "www.dieckmandesigns.com/codelou/create-new-password.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
         $expires = date("U") + 1800;
+
+        require 'config.php';
     }else{
         header("location: index.php");
     }

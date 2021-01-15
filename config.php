@@ -72,13 +72,13 @@
 				$_SESSION['success'] = "You are now logged in!";
 				header("location: index.php");
 			}else{
-				array_push($errors, "The username/password combination is invalid")
+				array_push($errors, "The username/password combination is invalid");
 				header("location: login.php");
 			}
 		}
 	}
 
-	if(isset($_GET('logout')){
+	if(isset($_GET('logout'))){
 		session_destroy();
 		unset($_SESSION['username']);
 		header('location: login.php');
