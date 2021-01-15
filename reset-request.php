@@ -36,7 +36,7 @@
         }
 
         mysqli_stmt_close($stmt);
-        mysqli_close();
+        mysqli_close($link);
 
         $to = $userEmail;
 
