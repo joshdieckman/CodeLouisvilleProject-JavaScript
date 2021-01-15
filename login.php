@@ -36,6 +36,7 @@ require_once "config.php";
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
             <p>Not a member? <a href="register.php">Register here</a>.</p>
+            <a href="reset-password.php">Forgot your password?</a>
         </form>
     </div>
 </body>
