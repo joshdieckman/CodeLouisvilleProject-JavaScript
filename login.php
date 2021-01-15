@@ -37,6 +37,13 @@ require_once "config.php";
             </div>
             <p>Not a member? <a href="register.php">Register here</a>.</p>
             <a href="reset-password.php">Forgot your password?</a>
+            <?php
+                if(isset($_GET["newpwd"])){
+                    if($_GET["newpwd"] === "passwordupdated"){
+                        echo '<p class="signupsuccess">Your password has been reset!</p>';
+                    }
+                }
+            ?>
         </form>
     </div>
 </body>
